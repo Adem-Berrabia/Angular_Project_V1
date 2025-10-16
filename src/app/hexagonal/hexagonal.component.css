@@ -1,3 +1,23 @@
+/* Section Title */
+.section-title {
+  text-align: center;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 80px;
+  color: #00ffff;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #00ffff, #ff0080);
+  border-radius: 2px;
+}
 /* Section 3: Enhanced Hexagonal Showcase */
 .showcase {
   padding: 150px 0;
@@ -8,14 +28,14 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 60px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 .hexagon {
   width: 220px;
-  height: 290px;
+  height: auto;
   position: relative;
   margin: 20px;
   transition: all 0.4s ease;

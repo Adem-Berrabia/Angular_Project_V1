@@ -1,20 +1,25 @@
-/* Enhanced Glass Effects */
-.contact-info.glass,
-.contact-form.glass {
-  background: rgba(255, 255, 255, 0.08);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Glassmorphism styles */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(224, 163, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
-/* Improved hover effects */
-.contact-info.glass:hover,
-.contact-form.glass:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(224, 163, 255, 0.3);
-  box-shadow: 0 12px 40px rgba(224, 163, 255, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+.glass-strong {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
+
 /* Section 5: Contact */
 .contact {
   padding: 150px 0;
@@ -153,15 +158,4 @@
 .social-links a:hover {
   transform: translateY(-5px) scale(1.1);
   box-shadow: 0 10px 25px rgba(0, 255, 255, 0.4);
-}
-@media (max-width: 1024px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-@media (max-width: 768px) {
-  .contact {
-    padding: 80px 0;
-  }
 }
