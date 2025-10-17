@@ -273,4 +273,13 @@ nav {
   border-radius: 25px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
-  
+
+@media (max-width: 1000px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+}

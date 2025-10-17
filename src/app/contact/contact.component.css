@@ -159,3 +159,16 @@
   transform: translateY(-5px) scale(1.1);
   box-shadow: 0 10px 25px rgba(0, 255, 255, 0.4);
 }
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 80px 0;
+  }
+}
