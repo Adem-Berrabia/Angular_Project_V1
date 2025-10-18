@@ -1,5 +1,4 @@
-<!-- Header -->
-<header class="glass">
+<header class="glass" [class.scrolled]="isScrolled">
   <nav>
     <a href="#home" class="logo">
       <svg
@@ -38,76 +37,83 @@
             repeatCount="indefinite"
           />
         </circle>
-        <line
-          x1="50"
-          y1="30"
-          x2="30"
-          y2="60"
-          stroke="url(#logoGradient)"
-          stroke-width="2"
-          opacity="0.6"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.6;1;0.6"
-            dur="3s"
-            repeatCount="indefinite"
-          />
-        </line>
-        <line
-          x1="50"
-          y1="30"
-          x2="70"
-          y2="65"
-          stroke="url(#logoGradient)"
-          stroke-width="2"
-          opacity="0.6"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.6;1;0.6"
-            dur="2.2s"
-            repeatCount="indefinite"
-          />
-        </line>
-        <line
-          x1="30"
-          y1="60"
-          x2="70"
-          y2="65"
-          stroke="url(#logoGradient)"
-          stroke-width="2"
-          opacity="0.6"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.6;1;0.6"
-            dur="2.8s"
-            repeatCount="indefinite"
-          />
-        </line>
       </svg>
       NEURALGLASS
     </a>
+
+    <!-- Desktop Navigation -->
     <ul class="nav-links">
-      <li><a href="#features">Neural</a></li>
-      <li><a href="#showcase">Matrix</a></li>
-      <li><a href="#timeline">Evolution</a></li>
-      <li><a href="#contact">Connect</a></li>
+      <li>
+        <a
+          href="#features"
+          [class.active]="activeLink === 'features'"
+          (click)="setActive('features')"
+          >Neural</a
+        >
+      </li>
+      <li>
+        <a
+          href="#showcase"
+          [class.active]="activeLink === 'showcase'"
+          (click)="setActive('showcase')"
+          >Matrix</a
+        >
+      </li>
+      <li>
+        <a
+          href="#timeline"
+          [class.active]="activeLink === 'timeline'"
+          (click)="setActive('timeline')"
+          >Evolution</a
+        >
+      </li>
+      <li>
+        <a
+          href="#contact"
+          [class.active]="activeLink === 'contact'"
+          (click)="setActive('contact')"
+          >Connect</a
+        >
+      </li>
     </ul>
-    <div class="mobile-menu-toggle">
+
+    <!-- Mobile Menu Toggle -->
+    <div
+      class="mobile-menu-toggle"
+      [class.active]="isMenuOpen"
+      (click)="toggleMenu()"
+    >
       <div class="hamburger-line"></div>
       <div class="hamburger-line"></div>
       <div class="hamburger-line"></div>
     </div>
   </nav>
-  <div class="mobile-nav">
-    <a href="#features">Neural</a>
-    <a href="#showcase">Matrix</a>
-    <a href="#timeline">Evolution</a>
-    <a href="#contact">Connect</a>
-    <a href="https://example.com" target="_blank" class="external-link"
-      >External</a
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" [class.active]="isMenuOpen">
+    <a
+      href="#features"
+      [class.active]="activeLink === 'features'"
+      (click)="setActive('features')"
+      >Neural</a
+    >
+    <a
+      href="#showcase"
+      [class.active]="activeLink === 'showcase'"
+      (click)="setActive('showcase')"
+      >Matrix</a
+    >
+    <a
+      href="#timeline"
+      [class.active]="activeLink === 'timeline'"
+      (click)="setActive('timeline')"
+      >Evolution</a
+    >
+    <a
+      href="#contact"
+      [class.active]="activeLink === 'contact'"
+      (click)="setActive('contact')"
+      >Connect</a
     >
   </div>
 </header>
