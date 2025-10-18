@@ -6,7 +6,6 @@
   color: #00ffff;
   position: relative;
 }
-
 .section-title::after {
   content: "";
   position: absolute;
@@ -19,7 +18,7 @@
   border-radius: 2px;
 }
 
-/* Section 4: Enhanced Timeline */
+/* Timeline Section */
 .timeline {
   padding: 100px 0;
   position: relative;
@@ -32,15 +31,17 @@
 }
 .timeline-line {
   position: absolute;
-  left: 50%;
   top: 0;
   bottom: 0;
   width: 4px;
-  background: linear-gradient(180deg, #e0a3ff, #ff69b4, #9370db);
+  left: 50%;
   transform: translateX(-50%);
+  background: linear-gradient(180deg, #e0a3ff, #ff69b4, #9370db);
   border-radius: 2px;
   box-shadow: 0 0 20px rgba(224, 163, 255, 0.3);
 }
+
+/* Timeline Items */
 .timeline-item {
   display: flex;
   justify-content: flex-end;
@@ -58,7 +59,7 @@
   padding: 50px 40px;
   position: relative;
   transform: perspective(1000px) rotateY(-5deg);
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
   background: rgba(224, 163, 255, 0.08);
   backdrop-filter: blur(25px);
   border: 1px solid rgba(224, 163, 255, 0.15);
@@ -72,40 +73,46 @@
 .timeline-content:hover {
   transform: perspective(1000px) rotateY(0deg) translateZ(20px);
   box-shadow: 0 25px 60px rgba(224, 163, 255, 0.2),
-    0 0 0 1px rgba(224, 163, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    0 0 0 1px rgba(224, 163, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
   border-color: rgba(224, 163, 255, 0.3);
 }
+
+/* Timeline Dot */
 .timeline-dot {
   position: absolute;
-  left: 50%;
   top: 60px;
+  left: 50%;
   transform: translateX(-50%);
   width: 24px;
   height: 24px;
-  background: linear-gradient(135deg, #ff69b4, #e0a3ff);
   border-radius: 50%;
+  background: linear-gradient(135deg, #ff69b4, #e0a3ff);
+  border: 3px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 25px rgba(255, 105, 180, 0.6), 0 4px 15px rgba(0, 0, 0, 0.3);
   z-index: 1;
-  border: 3px solid rgba(255, 255, 255, 0.2);
 }
+
+/* Timeline Text */
 .timeline-year {
   font-size: 1.8rem;
+  font-weight: bold;
   color: #e0a3ff;
   margin-bottom: 20px;
-  font-weight: bold;
   text-shadow: 0 0 15px rgba(224, 163, 255, 0.4);
 }
 .timeline-content h4 {
   font-size: 1.5rem;
+  font-weight: 600;
   color: #ffffff;
   margin-bottom: 20px;
-  font-weight: 600;
 }
 .timeline-content p {
+  font-size: 1rem;
   color: #d1d1d1;
   line-height: 1.7;
-  font-size: 1rem;
 }
+
 /* Mobile Responsiveness */
 @media (max-width: 1024px) {
   .timeline-line {
@@ -124,6 +131,7 @@
     max-width: 100%;
   }
 }
+
 @media (max-width: 768px) {
   .timeline {
     padding: 60px 0;
