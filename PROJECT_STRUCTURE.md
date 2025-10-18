@@ -254,5 +254,3 @@ This project implements a **cyberpunk glassmorphism** design with:
 - **3D perspective transforms**
 
 ---
-
-_Generated for Angular Neural Glass Project - TemplateMo 597_
