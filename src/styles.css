@@ -1,1 +1,249 @@
 /* You can add global styles to this file, and also import other style files */
+@charset "utf-8";
+.border {
+  border: 3px solid red;
+}
+/* CSS Document */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  background: #000;
+  color: #e0a3ff;
+  overflow-x: hidden;
+  min-height: 100vh;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Enhanced background colors - Purple/Pink/Green palette */
+.neural-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: radial-gradient(
+      circle at 15% 85%,
+      rgba(75, 0, 130, 0.7) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(139, 37, 99, 0.8) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 45% 60%,
+      rgba(128, 0, 128, 0.6) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 70% 40%,
+      rgba(34, 139, 34, 0.4) 0%,
+      transparent 50%
+    ),
+    linear-gradient(135deg, #0a0a0a 0%, #2d1b3d 50%, #000000 100%);
+  animation: backgroundPulse 14s ease-in-out infinite;
+}
+@keyframes backgroundPulse {
+  0%,
+  100% {
+    filter: brightness(0.9) saturate(1.4) hue-rotate(0deg);
+  }
+  33% {
+    filter: brightness(1.1) saturate(1.7) hue-rotate(15deg);
+  }
+  66% {
+    filter: brightness(1) saturate(1.5) hue-rotate(-10deg);
+  }
+}
+/* Floating geometric shapes */
+.geometric-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+.shape {
+  position: absolute;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  animation: floatShape 20s linear infinite;
+}
+.shape:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  left: 10%;
+  animation-delay: 0s;
+  border-color: rgba(255, 105, 180, 0.4);
+}
+.shape:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  left: 70%;
+  animation-delay: -5s;
+  border-radius: 50%;
+  border-color: rgba(147, 112, 219, 0.4);
+}
+.shape:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  left: 30%;
+  animation-delay: -10s;
+  transform: rotate(45deg);
+  border-color: rgba(224, 163, 255, 0.4);
+}
+.shape:nth-child(4) {
+  width: 120px;
+  height: 120px;
+  left: 50%;
+  animation-delay: -15s;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background: linear-gradient(45deg, rgba(255, 105, 180, 0.1), transparent);
+}
+@keyframes floatShape {
+  from {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1200px) {
+  .neural-background {
+    background-size: 120% 120%;
+  }
+
+  .geometric-shapes .shape {
+    opacity: 0.7;
+  }
+
+  .neural-lines .neural-line {
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 1000px) {
+  .neural-background {
+    background-size: 140% 140%;
+  }
+
+  .geometric-shapes .shape {
+    opacity: 0.5;
+    animation-duration: 25s;
+  }
+
+  .neural-lines .neural-line {
+    opacity: 0.4;
+    animation-duration: 10s;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .main {
+    padding: 0;
+  }
+
+  .neural-background {
+    background-size: 160% 160%;
+  }
+
+  .geometric-shapes .shape {
+    opacity: 0.3;
+    animation-duration: 30s;
+  }
+
+  .neural-lines .neural-line {
+    opacity: 0.3;
+    animation-duration: 12s;
+  }
+
+  .features,
+  .showcase,
+  .timeline,
+  .contact {
+    padding: 80px 0;
+  }
+
+  .timeline {
+    padding: 60px 0;
+  }
+
+  .footer-links {
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+
+  .footer-links a {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+
+  .neural-background {
+    background-size: 180% 180%;
+  }
+
+  .geometric-shapes .shape {
+    opacity: 0.2;
+    animation-duration: 35s;
+  }
+
+  .neural-lines .neural-line {
+    opacity: 0.2;
+    animation-duration: 15s;
+  }
+
+  .features,
+  .showcase,
+  .timeline,
+  .contact {
+    padding: 60px 0;
+  }
+
+  .timeline {
+    padding: 50px 0;
+  }
+}
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #00ffff, #ff0080);
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ff0080, #8000ff);
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.7);
+}
