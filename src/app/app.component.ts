@@ -6,6 +6,7 @@ import { HexagonalComponent } from './hexagonal/hexagonal.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
+import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
     TimelineComponent,
     ContactComponent,
     FooterComponent,
+    ScrollToTopComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
