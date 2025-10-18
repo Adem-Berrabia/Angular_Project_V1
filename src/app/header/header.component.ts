@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +11,8 @@ export class HeaderComponent {
   isMenuOpen = false;
   isScrolled = false;
   activeLink = 'home';
+
+  constructor(private eRef: ElementRef) {}
 
   // Toggle mobile menu
   toggleMenu() {
@@ -27,5 +29,21 @@ export class HeaderComponent {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.isScrolled = window.scrollY > 50;
+  }
+
+  // Detect clicks outside the header
+  @HostListener('document:click', ['$event'])
+  clickOutside(event: Event) {
+    if (this.isMenuOpen && !this.eRef.nativeElement.contains(event.target)) {
+      this.isMenuOpen = false;
+    }
+  }
+
+  // Detect window resize and close menu if switching to desktop
+  @HostListener('window:resize', [])
+  onResize() {
+    if (window.innerWidth >= 1000 && this.isMenuOpen) {
+      this.isMenuOpen = false;
+    }
   }
 }
