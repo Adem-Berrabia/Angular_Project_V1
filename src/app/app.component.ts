@@ -20,7 +20,7 @@ import { FooterComponent } from './footer/footer.component';
     TimelineComponent,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'my-angular19-app';
