@@ -108,8 +108,6 @@
 }
 /* Mobile Responsiveness */
 @media (max-width: 1024px) {
- 
-
   .timeline-line {
     left: 30px;
   }
