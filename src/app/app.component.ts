@@ -13,15 +13,15 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     HeaderComponent,
     HeroComponent,
-    ContactComponent,
-    FooterComponent,
     DiagonalComponent,
     HexagonalComponent,
     TimelineComponent,
+    ContactComponent,
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'my-angular19-app';
+  title = 'NEURAL INTERFACE';
 }
